@@ -1,4 +1,8 @@
 import axios from "axios";
+import dotenv from "dotenv";
+
+
+dotenv.config({ path: "./src/config/.env" });
 
 async function playerStats() {
   try {
@@ -6,7 +10,7 @@ async function playerStats() {
       baseURL: "https://free-nba.p.rapidapi.com/players/237",
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "ba0720ec70mshb18d3153ed7911fp1c776bjsn9904be790bcf",
+        "X-RapidAPI-Key": process.env.TOKEN_KEY,
         "X-RapidAPI-Host": "free-nba.p.rapidapi.com",
       },
     });
